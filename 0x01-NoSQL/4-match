@@ -1,0 +1,2 @@
+// Lists all the documents that match the case
+db.school.find({name: "Holberton school"})
