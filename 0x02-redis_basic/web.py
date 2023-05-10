@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
+""" web.py """
 import requests
 from redis import Redis
 
 redis = Redis()
+
 
 def get_page(url: str) -> str:
     """ Implementing an expiring web cache and tracker """
