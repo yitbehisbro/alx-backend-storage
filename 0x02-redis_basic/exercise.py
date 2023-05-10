@@ -33,6 +33,7 @@ def call_history(method: Callable) -> Callable:
         return output
     return wrapper
 
+
 def replay(method):
     """ Display the history of calls of a particular function. """
     input_key = f'{method.__qualname__}:inputs'
