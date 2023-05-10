@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 """ web.py """
-import requests
 from redis import Redis
-
+import requests
 redis = Redis()
 
 
 def get_page(url: str) -> str:
     """ Implementing an expiring web cache and tracker """
-    count_key = f'count:{url}'
-    cache_key = f'cache:{url}'
+    count_key = 'count:{}'.format(url)
+    cache_key = 'cache:{}'.format(url)
     redis.incr(count_key)
     content = redis.get(cache_key)
     if content is None:
